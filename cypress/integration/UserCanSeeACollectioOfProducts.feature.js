@@ -3,7 +3,7 @@
 /* eslint-disable no-sequences */
 describe("User that visits the application", () => {
   before(() => {
-    cy.intercept("GET", "**/api/products", { fixtures: "products.json" }).as(
+    cy.intercept("GET", "**/api/products", { fixture: "products.json" }).as(
       "getProducts"
     );
     cy.visit("/");

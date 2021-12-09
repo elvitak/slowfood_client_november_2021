@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 import React, { useState, useEffect } from "react";
 import Products from "./modules/Products";
+import Orders from "./modules/orders";
 
 const App = () => {
   const [products, setProducts] = useState([]);
@@ -12,12 +13,14 @@ const App = () => {
   }, []);
 
   const addToOrder = (id) => {
-    // We can now make a POST request to /api/orders
+    Orders.create(id, 99).then((response) => {
+      debugger;
+    });
   };
 
   const productsList = products.map((product) => {
     return (
-      <div key={product_id}>
+      <div key={product.id}>
         {product.name} - {`${product.price} kr`}{" "}
         <button onClick={() => addToOrder(product.id)}>Add to Order</button>
       </div>
