@@ -21,7 +21,7 @@ const App = () => {
         setOrder(response.order);
       });
     } else {
-      Orders.create(id, 99).then((response) => {
+      Orders.create(id, 2).then((response) => {
         setMessage(response.message);
         setOrder(response.order);
       });
