@@ -22,5 +22,10 @@ describe('Clicking on a "Add to order" button for a specific product', () => {
     cy.wait("@Orders.create").its("request.method").should("eq", "POST");
   });
 
-  it("is expected to render a message", () => {});
+  it("is expected to render a message", () => {
+    cy.get("[data-cy=message_box]").should(
+      "contain",
+      "Pizza was added to your order!"
+    );
+  });
 });
